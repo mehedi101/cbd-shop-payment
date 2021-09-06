@@ -1,0 +1,20 @@
+{
+    "name": "mehedi101/cbd-shop-payment-woo-extension-plugin",
+    "description": "An wooCommerce Extension plugin that will check a customer is elegible for credit purchase or not.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Mehedi Hasan",
+            "email": "mehedi101@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Cbd\\Shop\\": "includes/"
+        },
+        "files": ["includes/functions.php"]
+    }
+}
