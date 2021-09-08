@@ -50,6 +50,15 @@
 									<span><?php esc_attr_e( 'Radio description #2 with legend class .screen-reader-text', 'WpAdminStyle' ); ?></span>
 								</label>
 							</fieldset>
+
+							<fieldset>
+							<legend class="screen-reader-text"><span> options</span></legend>
+							<?php 
+								settings_fields( 'cbd_shop_option_group' );
+								do_settings_fields( 'cbd-shop-options','cbd_shop_option_main_section' );
+								submit_button( 'Save Changes', 'primary');
+							?>
+							</fieldset>
 							</form>
 
 
