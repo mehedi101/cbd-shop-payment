@@ -8,5 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'Cbd\\Shop\\Admin' => $baseDir . '/includes/Admin.php',
     'Cbd\\Shop\\Admin\\Menu' => $baseDir . '/includes/Admin/Menu.php',
+    'Cbd\\Shop\\Frontend' => $baseDir . '/includes/Frontend.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

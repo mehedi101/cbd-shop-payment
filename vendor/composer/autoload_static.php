@@ -27,6 +27,7 @@ class ComposerStaticInit9363c4fb7e2585ac5b7cab18bbc59d64
     public static $classMap = array (
         'Cbd\\Shop\\Admin' => __DIR__ . '/../..' . '/includes/Admin.php',
         'Cbd\\Shop\\Admin\\Menu' => __DIR__ . '/../..' . '/includes/Admin/Menu.php',
+        'Cbd\\Shop\\Frontend' => __DIR__ . '/../..' . '/includes/Frontend.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
