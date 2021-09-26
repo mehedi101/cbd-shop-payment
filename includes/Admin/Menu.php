@@ -92,7 +92,7 @@ class Menu
     }
 
     public function cbd_shop_options_inputs_validation($input){ 
-            $valid['api'] = preg_replace('/[^a-zA-Z0-9\s]/','',$input['api']);
+            $valid['api'] = preg_replace('/^[a-z0-9]{32}$/i','',$input['api']);
 
             if( $valid['api'] !== $input['api']){  
                 add_settings_error( 'cbd_shop_text_string', 'cbd_shop_texterror', 'Incorrent value entered! Please only input letters and spaces and numbers', 'error' );
