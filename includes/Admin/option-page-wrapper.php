@@ -22,7 +22,7 @@
 						</button>
 						<!-- Toggle -->
 
-						<h2 class="hndle"><span><?php esc_attr_e( 'Main Content Header', 'WpAdminStyle' ); ?></span>
+						<h2 class="hndle"><span><?php esc_attr_e( 'First Debit Check API Information', 'cbd-shop' ); ?></span>
 						</h2>
 
 						<div class="inside">
@@ -67,12 +67,12 @@
 						<!-- Toggle -->
 
 						<h2 class="hndle"><span><?php esc_attr_e(
-									'Sidebar Content Header', 'WpAdminStyle'
+									'FAQ', 'cbd-shop'
 								); ?></span></h2>
 
 						<div class="inside">
 							<p><?php esc_attr_e( 'Everything you see here, from the documentation to the code itself, was created by and for the community. WordPress is an Open Source project, which means there are hundreds of people all over the world working on it. (More than most commercial platforms.) It also means you are free to use it for anything from your cat’s home page to a Fortune 500 web site without paying anyone a license fee and a number of other important freedoms.',
-							                     'WpAdminStyle' ); ?></p>
+							                     'cbd-shop' ); ?></p>
 						</div>
 						<!-- .inside -->
 

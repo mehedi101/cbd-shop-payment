@@ -91,7 +91,7 @@ final class Cbd_Shop{
      */
     public function init_plugin(){ 
         add_action('init',[$this, 'localization_setup']);
-
+        new Cbd\Shop\Assets();
         if(is_admin()){ 
             new Cbd\Shop\Admin();
 
