@@ -1,4 +1,15 @@
 <?php
+add_filter( 'woocommerce_checkout_fields' , 'misha_labels_placeholders', 9999 );
+
+function misha_labels_placeholders( $f ) {
+
+	// first name can be changed with woocommerce_default_address_fields as well
+	$f['billing']['billing_first_name']['label'] = 'Your mom calls you';
+	$f['order']['order_comments']['placeholder'] = 'What\'s on your mind?';
+	
+	return $f;
+
+}
 add_filter( 'woocommerce_available_payment_gateways', 'rudr_gateway_by_country' );
 
 function rudr_gateway_by_country( $gateways ) {
@@ -31,6 +42,7 @@ function rudr_gateway_by_country( $gateways ) {
 		$fn = $order->get_billing_first_name();
 		$ln = $order->get_billing_last_name();
 		$st = $order->get_billing_address_1();
+		$hn = $order->get_billing_address_2();
 		$pl = $order->get_billing_city();
 		$zp = $order->get_billing_postcode();
 		$em = $order->get_billing_email();
@@ -54,7 +66,7 @@ function rudr_gateway_by_country( $gateways ) {
     $response = wp_remote_get( esc_url_raw( $url ) );
     $api_response = wp_remote_retrieve_body( $response );
 
-    
+
     wc_add_notice(__($api_response, 'cbd-shop'), 'success');
 
 	if ( 'BD' === $country ) {

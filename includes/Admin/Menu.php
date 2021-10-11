@@ -77,6 +77,7 @@ class Menu
      //   add_settings_field( 'first_debit_api', 'First Debit API', [$this, 'first_api_field'], $page, $main_section);
         add_settings_field( 'first_debit_username', 'First Debit Username', [$this, 'first_api_username'], $page, $main_section);
        add_settings_field( 'first_debit_password', 'First Debit Password', [$this, 'first_api_password'], $page, $main_section); 
+       add_settings_field( 'first_debit_score', 'Score', [$this, 'first_api_score'], $page, $main_section); 
        add_settings_field( 'first_debit_connection', 'Conncetion Types', [$this, 'first_api_connection'], $page, $main_section); 
     }
 
@@ -91,19 +92,23 @@ class Menu
         $api = $options['api'];
         echo '<input type="text" name="cbd_shop_options[api]" value="' . $api . '"/><br/><br/>';
     }
-    function first_api_username(){ 
+    public function first_api_username(){ 
         $options = get_option('cbd_shop_options');
         $username = $options['api_username'];
         echo '<input type="text" name="cbd_shop_options[api_username]" value="' . $username . '"/><br/><br/>';
     }
 
-    function first_api_password(){  
+    public function first_api_password(){  
         $options = get_option('cbd_shop_options');
         $api_pass = $options['api_pass'];
         echo '<input type="text" name="cbd_shop_options[api_pass]" value="' . $api_pass . '"/><br/><br/>';
     }
-
-    function first_api_connection(){ 
+    public function first_api_score(){ 
+        $options = get_option('cbd_shop_options');
+        $api_score = $options['score'];
+        echo '<input type="number" name="cbd_shop_options[score]" value="' . $api_score . '"/><br/><br/>';
+    }
+    public function first_api_connection(){ 
         $options = get_option('cbd_shop_options');
         $api_connection = $options['api_connection']; ?>
         <fieldset>
