@@ -89,28 +89,28 @@ class Menu
     public function first_api_field()
     {
         $options = get_option('cbd_shop_options');
-        $api = $options['api'];
+        $api =  !empty($options) && array_key_exists('api', $options) ?$options['api'] :null;
         echo '<input type="text" name="cbd_shop_options[api]" value="' . $api . '"/><br/><br/>';
     }
     public function first_api_username(){ 
         $options = get_option('cbd_shop_options');
-        $username = $options['api_username'];
+        $username = !empty($options) && array_key_exists('api_username', $options) ? $options['api_username'] : null;
         echo '<input type="text" name="cbd_shop_options[api_username]" value="' . $username . '"/><br/><br/>';
     }
 
     public function first_api_password(){  
         $options = get_option('cbd_shop_options');
-        $api_pass = $options['api_pass'];
+        $api_pass = !empty($options) && array_key_exists('api_pass', $options) ? $options['api_pass'] : null;
         echo '<input type="text" name="cbd_shop_options[api_pass]" value="' . $api_pass . '"/><br/><br/>';
     }
     public function first_api_score(){ 
         $options = get_option('cbd_shop_options');
-        $api_score = $options['score'];
+        $api_score = !empty($options) && array_key_exists('score', $options) ? $options['score'] :null;
         echo '<input type="number" name="cbd_shop_options[score]" value="' . $api_score . '"/><br/><br/>';
     }
     public function first_api_connection(){ 
         $options = get_option('cbd_shop_options');
-        $api_connection = $options['api_connection']; ?>
+        $api_connection = !empty($options) && array_key_exists('api_connection', $options) ? $options['api_connection'] :null; ?>
         <fieldset>
 	        <label>
 		        <input type="radio" name="cbd_shop_options[api_connection]" value="test" <?php checked($api_connection, 'test')?> />
@@ -128,9 +128,11 @@ class Menu
           //  $valid['api'] = preg_replace('/^[a-z0-9]{32}$/i','',$input['api']);
             $valid['api_username'] = preg_replace('/^[a-z0-9]{32}$/i','',$input['api_username']);
             $valid['api_pass'] = preg_replace('/^[a-z0-9]{32}$/i','',$input['api_pass']);
+            $valid['score'] = preg_replace('/^[a-z0-9]{32}$/i','',$input['score']);
+            
             $valid['api_connection'] = preg_replace('/^[a-z0-9]{32}$/i','',$input['api_connection']);
 
-            if( $valid['api_username'] !== $input['api_username'] || $valid['api_pass'] !== $input['api_pass'] || $valid['api_connection'] !== $input['api_connection']){  
+            if( $valid['api_username'] !== $input['api_username'] || $valid['api_pass'] !== $input['api_pass'] ||  $valid['score'] !== $input['score'] || $valid['api_connection'] !== $input['api_connection']){  
                 add_settings_error( 'cbd_shop_text_string', 'cbd_shop_texterror', 'Incorrent value entered! Please only input letters and spaces and numbers', 'error' );
             }
 

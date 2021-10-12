@@ -61,13 +61,16 @@ class Assets{
             wp_register_script($handle,  $value['src'],$deps, $value['version'] ,true);
         }
 
-        $cbdShopOPtions =  get_option('cbd_shop_options');
-        wp_localize_script('cbd-shop-frontend-js','cbdShop',[
-            'username' => $cbdShopOPtions['api_username'],
-            'pass' => $cbdShopOPtions['api_pass'],
-            'connect' => $cbdShopOPtions['api_connection']
-        ]);
+        $opt =  get_option('cbd_shop_options');
 
+        if( !empty($opt) && array_key_exists('api_username', $opt) && array_key_exists('api_pass', $opt) && array_key_exists('api_connection', $opt)){
+       
+        wp_localize_script('cbd-shop-frontend-js','cbdShop',[
+            'username' => $opt['api_username'],
+            'pass' => $opt['api_pass'],
+            'connect' => $opt['api_connection']
+        ]);
+    }
 
     }
 
